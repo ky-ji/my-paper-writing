@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kangye Paper Writing"
+  short_description: "Personal top-conference paper writing style"
+  default_prompt: "Use $kangye-paper-writing to review and polish this ML paper section in Kangye's established style."
