@@ -1,6 +1,6 @@
 # my-paper-writing
 
-A compact agent skill for transferring a bottleneck-first AI/ML/robotics paper writing style to new projects from rough ideas, experiments, notes, or code repositories.
+A compact agent skill for transferring my writing style to new projects from rough ideas, experiments, notes, or code repositories.
 
 The skill is designed for early paper construction and fast revision loops: it helps turn implementation details into a reviewer-facing narrative, draft section scaffolds in the target style, tighten language, and diagnose weak paragraph structure.
 
