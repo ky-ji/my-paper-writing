@@ -1,12 +1,12 @@
 # my-paper-writing
 
-A compact Codex skill for transferring a bottleneck-first AI/ML/robotics paper writing style to new projects from rough ideas, experiments, notes, or code repositories.
+A compact agent skill for transferring a bottleneck-first AI/ML/robotics paper writing style to new projects from rough ideas, experiments, notes, or code repositories.
 
 The skill is designed for early paper construction and fast revision loops: it helps turn implementation details into a reviewer-facing narrative, draft section scaffolds in the target style, tighten language, and diagnose weak paragraph structure.
 
 ## Core Uses
 
-- Build an initial paper frame from scratch, notes, experiments, or a GitHub codebase.
+- Build an initial paper frame from scratch, notes, experiments, or a code repository.
 - Transfer the target writing style to new projects through reusable narrative moves.
 - Convert code artifacts into research abstractions: task, bottleneck, assumption, intervention, mechanism, evidence.
 - Draft Abstract, Introduction, Method, Experiments, captions, and contribution lists.
@@ -15,7 +15,7 @@ The skill is designed for early paper construction and fast revision loops: it h
 
 ## Quick Start
 
-Invoke the skill in Codex:
+Invoke the skill in a compatible writing agent:
 
 ```text
 Use $my-paper-writing to build a paper outline from this repository.
@@ -98,21 +98,21 @@ code artifact -> research abstraction -> claim -> needed evidence -> paper secti
 - `SKILL.md`: main trigger, workflow, writing rules, and output contract.
 - `references/code-to-paper.md`: high-level repository-to-paper abstraction framework.
 - `references/style-transfer.md`: writing-style signature, transfer sheet, paragraph moves, and style checklist.
-- `references/section-frames.md`: section-level scaffolds for Abstract, Introduction, Method, Experiments, and captions.
+- `references/section-frames.md`: section-level playbooks for Abstract, Introduction, Related Work, Method, Experiments, figures, and conclusions.
 - `references/revision.md`: paragraph repair, claim-evidence checks, and polishing rules.
 
 ## Install Or Update
 
-Place the repository at:
+Place the repository in the skills directory used by your writing agent, keeping the folder name:
 
 ```text
-~/.codex/skills/my-paper-writing
+my-paper-writing
 ```
 
 To update an existing local install:
 
 ```bash
-cd ~/.codex/skills/my-paper-writing
+cd path/to/my-paper-writing
 git pull
 ```
 

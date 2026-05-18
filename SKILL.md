@@ -20,7 +20,7 @@ The default style is bottleneck-first, observation-driven, mechanism-centered, a
 2. Load only the needed reference:
    - Style transfer: `references/style-transfer.md`
    - From code to paper: `references/code-to-paper.md`
-   - Section frames: `references/section-frames.md`
+   - Section playbooks: `references/section-frames.md`
    - Revision and polishing: `references/revision.md`
 3. For substantial drafting or rewriting, apply the style transfer sheet before writing.
 4. Always identify the story spine:
