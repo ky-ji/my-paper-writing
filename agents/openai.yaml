@@ -1,4 +1,4 @@
 interface:
   display_name: "My Paper Writing"
-  short_description: "Personal top-conference paper writing style"
-  default_prompt: "Use $my-paper-writing to review and polish this ML paper section in my established top-conference style."
+  short_description: "Build, polish, and stress-test paper stories"
+  default_prompt: "Use $my-paper-writing to turn this codebase or rough idea into a paper outline, then polish the narrative."

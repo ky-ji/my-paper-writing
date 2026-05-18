@@ -1,88 +1,64 @@
 ---
 name: my-paper-writing
-description: Use when drafting, reviewing, proofreading, or polishing ML/robotics/AI research papers in Kangye Ji's established top-conference style, especially Abstract, Introduction, Related Work, Method, Experiments, Conclusion, rebuttal text, figure captions, contribution lists, and claim-evidence alignment.
+description: Use when building an AI/ML/robotics paper from scratch, from a GitHub codebase, or from rough notes; drafting paper outlines, Abstract, Introduction, Method, Experiments, captions, and contribution lists; polishing language; or reviewing and strengthening paragraph-level storytelling, claim-evidence alignment, and reviewer-facing narrative.
 ---
 
 # My Paper Writing
 
-## Overview
+## Purpose
 
-Use this skill to make a paper read like Kangye Ji's accepted top-conference work: bottleneck-first, observation-centered, mechanism-driven, and evidence-tight.
-Prioritize reviewer-facing clarity over decorative prose.
+Use this skill as a compact paper-building engine: turn code, experiments, notes, or rough prose into a clear top-conference paper story.
+The default style is bottleneck-first, observation-driven, mechanism-centered, and evidence-tight.
 
-## Core Workflow
+## Fast Workflow
 
-1. Identify the target section and the paper's core story.
+1. Choose the task mode:
+   - `build`: create a paper frame from code/notes.
+   - `draft`: write a section from a validated story.
+   - `polish`: tighten language while preserving claims.
+   - `review`: diagnose and strengthen paragraph or section narrative.
 2. Load only the needed reference:
-   - Full style: `references/style-principles.md`
-   - Section drafting: `references/section-playbooks.md`
-   - Editing/review: `references/revision-checklists.md`
-   - Sentence patterns: `references/phrase-bank.md`
-3. Diagnose before rewriting:
-   - What practical bottleneck matters?
-   - What existing paradigm fails, and why?
-   - What observation justifies the new method?
-   - Which design choices operationalize the observation?
-   - Which experiments prove the performance-efficiency trade-off?
-4. Rewrite in the local style, keeping every claim supported by evidence supplied by the user.
-5. End with a compact reviewer-risk report unless the user only asks for direct proofreading.
+   - From code to paper: `references/code-to-paper.md`
+   - Section frames: `references/section-frames.md`
+   - Revision and polishing: `references/revision.md`
+3. Always identify the story spine:
+   `need -> bottleneck -> prior failure -> observation -> mechanism -> evidence`
+4. Return an artifact that saves time:
+   - for `build`: title candidates, core claim, outline, figure plan, experiment plan.
+   - for `draft`: section outline plus polished paragraphs.
+   - for `polish`: revised text plus key wording changes.
+   - for `review`: issues first, then stronger rewrite options.
 
-## Core Paper Arc
+## Code-To-Paper Rule
 
-Most sections should preserve this causal chain:
+When a repository is provided, read it as a source of paper evidence:
 
-`value -> bottleneck -> prior limitation -> observation -> mechanism -> evidence`
+- entrypoints reveal user workflow and evaluation claims.
+- wrappers, schedulers, gates, caches, losses, buffers, and state variables reveal mechanisms.
+- configs reveal controllable knobs and ablations.
+- scripts reveal benchmark scope and reproducibility.
+- logging and metrics reveal what can become tables and claims.
 
-Do not present the method as a bag of modules. Present it as a sequence of necessary answers to specific obstacles.
+Do not describe the code file-by-file. Convert implementation choices into research questions, observations, modules, ablations, and figures.
 
-## Output Modes
+## Writing Rules
 
-Use the mode implied by the user request:
+- One paragraph, one message.
+- First sentence states the paragraph role.
+- Every module answers a bottleneck.
+- Every strong claim has evidence or is weakened.
+- Pair efficiency with quality: speedup/FLOPs/latency/memory plus success/accuracy/fidelity.
+- Prefer concrete mechanism verbs: predict, allocate, schedule, reuse, truncate, decompose, overlap, cache, gate, supervise.
+- Preserve LaTeX commands, citations, labels, equations, and macros during edits.
+- Remove generic praise unless supported by a number or mechanism.
 
-- `diagnose`: list story gaps, unsupported claims, weak transitions, and missing evidence.
-- `rewrite`: provide polished prose plus a short note on what changed.
-- `line edit`: keep structure and tighten grammar, terms, transitions, and reviewer-facing precision.
-- `review`: lead with major risks, then minor edits, then suggested rewrites.
-- `latex edit`: preserve LaTeX commands, labels, citations, math, and macros.
+## Default Output Contract
 
-For nontrivial rewrites, return:
+For substantial tasks, return:
 
-1. A one-sentence story diagnosis.
-2. Revised text.
-3. A claim-evidence map.
-4. Remaining reviewer risks.
+1. `Story spine`: one compact causal chain.
+2. `Draft or rewrite`: the requested artifact.
+3. `Claim-evidence map`: major claims and support.
+4. `Reviewer risks`: missing evidence, weak transitions, unclear novelty, or overclaims.
 
-## Hard Rules
-
-- Keep one paragraph to one message.
-- Make the first sentence of each paragraph state its role.
-- Use concrete agents and mechanisms: "the pruner predicts", "the scheduler allocates", "the strategy truncates".
-- Quantify bottlenecks and results when numbers are available.
-- Prefer "However", "To address this", "Specifically", "Motivated by this observation", and "To operationalize this insight" only when the logical relation is real.
-- Do not invent observations, metrics, benchmarks, or ablations.
-- Do not overclaim novelty. Let the bottleneck, observation, and evidence imply novelty.
-- Remove generic praise words such as "powerful", "significant", "remarkable", and "novel" unless immediately backed by a concrete mechanism or result.
-- Keep terminology stable across title, abstract, contribution list, figures, method, and experiments.
-- If evidence is missing, weaken the claim or mark it as needing evidence.
-
-## Common Repair Moves
-
-- Vague problem -> add the real operational bottleneck and a number.
-- Broad prior-work complaint -> split methods into 2-3 categories and state the shared failure mode.
-- Method appears ad hoc -> insert the key observation before the module list.
-- Module list feels flat -> make each module answer a named bottleneck.
-- Abstract is crowded -> compress to problem, limitation, method, two mechanisms, result.
-- Introduction is weak -> add an early observation figure or quantified leave-one-out/profiling result.
-- Experiments feel like reporting -> group them by claims: effectiveness, efficiency, ablation, compatibility, qualitative behavior.
-- Caption is descriptive only -> rewrite it to state the takeaway and experimental context.
-
-## Source Basis
-
-This skill was distilled from four accepted or top-conference-targeted papers by Kangye Ji:
-
-- Jump-teaching: temporal disagreement for noisy-label sample selection.
-- Block-wise Adaptive Caching: training-free acceleration for Diffusion Policy.
-- Sparse ActionGen: rollout-adaptive sparse action generation.
-- Test-time Sparsity: parallelized pruning and omnidirectional reuse for action diffusion.
-
-Use these as style anchors, not as text to copy.
+For quick language edits, return only the revised text plus 2-4 terse notes.
