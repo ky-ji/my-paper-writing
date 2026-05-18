@@ -33,11 +33,10 @@ The default style is bottleneck-first, observation-driven, mechanism-centered, a
 
 When a repository is provided, read it as a source of paper evidence:
 
-- entrypoints reveal user workflow and evaluation claims.
-- wrappers, schedulers, gates, caches, losses, buffers, and state variables reveal mechanisms.
-- configs reveal controllable knobs and ablations.
-- scripts reveal benchmark scope and reproducibility.
-- logging and metrics reveal what can become tables and claims.
+- README, scripts, and configs reveal the intended task, setting, and benchmark scope.
+- data, model, training, and inference pipelines reveal assumptions and intervention points.
+- objectives, controllers, memory/state, constraints, and decision rules reveal mechanisms.
+- logging, metrics, tests, and output artifacts reveal evidence that can support claims.
 
 Do not describe the code file-by-file. Convert implementation choices into research questions, observations, modules, ablations, and figures.
 
@@ -47,8 +46,8 @@ Do not describe the code file-by-file. Convert implementation choices into resea
 - First sentence states the paragraph role.
 - Every module answers a bottleneck.
 - Every strong claim has evidence or is weakened.
-- Pair efficiency with quality: speedup/FLOPs/latency/memory plus success/accuracy/fidelity.
-- Prefer concrete mechanism verbs: predict, allocate, schedule, reuse, truncate, decompose, overlap, cache, gate, supervise.
+- Pair each claimed gain with the right counterpart metric: quality, cost, robustness, stability, generality, or interpretability.
+- Prefer concrete mechanism verbs: identify, predict, allocate, select, reformulate, constrain, supervise, adapt, retrieve, reuse, decompose.
 - Preserve LaTeX commands, citations, labels, equations, and macros during edits.
 - Remove generic praise unless supported by a number or mechanism.
 
