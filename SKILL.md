@@ -1,13 +1,13 @@
 ---
-name: kangye-paper-writing
+name: my-paper-writing
 description: Use when drafting, reviewing, proofreading, or polishing ML/robotics/AI research papers in Kangye Ji's established top-conference style, especially Abstract, Introduction, Related Work, Method, Experiments, Conclusion, rebuttal text, figure captions, contribution lists, and claim-evidence alignment.
 ---
 
-# Kangye Paper Writing
+# My Paper Writing
 
 ## Overview
 
-Use this skill to make a paper read like Kangye's accepted top-conference work: bottleneck-first, observation-centered, mechanism-driven, and evidence-tight.
+Use this skill to make a paper read like Kangye Ji's accepted top-conference work: bottleneck-first, observation-centered, mechanism-driven, and evidence-tight.
 Prioritize reviewer-facing clarity over decorative prose.
 
 ## Core Workflow
@@ -27,7 +27,7 @@ Prioritize reviewer-facing clarity over decorative prose.
 4. Rewrite in the local style, keeping every claim supported by evidence supplied by the user.
 5. End with a compact reviewer-risk report unless the user only asks for direct proofreading.
 
-## The Kangye Arc
+## Core Paper Arc
 
 Most sections should preserve this causal chain:
 
