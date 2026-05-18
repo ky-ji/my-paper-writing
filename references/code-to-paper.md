@@ -93,6 +93,8 @@ Produce this when asked to build from code:
 6. `Title candidates`: 3-5 names tied to the central mechanism or perspective.
 7. `Reviewer risks`: missing baselines, weak novelty, hidden overhead, unclear assumptions, unsupported claims.
 
+After this frame is filled, transfer it into `references/style-transfer.md` before drafting prose. Code explains what exists; style transfer decides how the paper should argue.
+
 ## Claim Discipline
 
 Before writing, classify each claim:

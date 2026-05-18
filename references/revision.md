@@ -23,6 +23,17 @@ Use this order:
 4. Remove claims that do not map to evidence.
 5. End with the implication for the next paragraph.
 
+For style transfer, also check whether the paragraph performs one recognizable move:
+
+- capability -> constraint;
+- prior grouping -> mismatch;
+- observation -> design;
+- naive extension -> failure;
+- mechanism -> advantage;
+- result -> attribution.
+
+If the move is unclear, rewrite the topic sentence before polishing local wording.
+
 ## Claim-Evidence Map
 
 Use:
@@ -48,12 +59,16 @@ Prefer:
 - `To operationalize this insight, ...`
 - `We attribute this failure to ...`
 - `These results verify ...`
+- `Motivated by this observation, ...`
+- `The key to [method] lies in ...`
+- `Compared with [baseline], [method] ...`
 
 Avoid:
 
 - `very`, `powerful`, `significant`, `novel`, `effective` without evidence.
 - `we can see`, `it is worth noting`, `many works`.
 - long module lists before the problem is clear.
+- contribution bullets that only list components.
 
 ## Strengthening Moves
 

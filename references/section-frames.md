@@ -4,24 +4,24 @@
 
 Use 5-7 sentences:
 
-1. Field value and practical bottleneck.
-2. Why existing methods fail structurally.
-3. Proposed method and core paradigm.
-4. Key observation or diagnosis.
-5. Main mechanism.
-6. Secondary mechanism or efficiency design.
-7. Evidence: benchmarks plus quality-efficiency result.
+1. Field capability plus practical bottleneck.
+2. Why existing methods fail structurally in this setting.
+3. Proposed method as a named mechanism or paradigm.
+4. Key observation or diagnosis that justifies the method.
+5. Main mechanism that operationalizes the observation.
+6. Secondary mechanism that resolves overhead, error, stability, or scalability.
+7. Evidence: benchmarks plus paired metrics.
 
 ## Introduction Frame
 
 Use six moves:
 
-1. `Need`: why the area matters and what real constraint blocks use.
-2. `Gap`: prior paradigms grouped by their shared failure.
+1. `Need`: why the area matters and what concrete constraint blocks use.
+2. `Gap`: prior paradigms grouped by their shared structural failure.
 3. `Observation`: a figure-backed fact that changes the design space.
-4. `Method`: what workflow the method changes.
-5. `Mechanisms`: each design answers one bottleneck.
-6. `Evidence`: benchmark scope, headline numbers, contribution list.
+4. `Method`: what workflow or assumption the method changes.
+5. `Mechanisms`: primary design, then secondary bottleneck and remedy.
+6. `Evidence`: benchmark scope, paired headline numbers, contribution list.
 
 Contribution bullets should be concrete:
 
@@ -45,6 +45,8 @@ Subsection structure:
 5. Practical advantage.
 6. Link to figure or ablation.
 
+Equations should follow motivation. First state why the quantity or objective is needed, then define it.
+
 ## Experiment Frame
 
 Open with setup and claims:
@@ -58,6 +60,7 @@ Organize by claim:
 - robustness: hard tasks, extreme settings, real-world data.
 - mechanism: ablations for each module.
 - generality: other samplers, models, datasets, or deployment settings.
+- internal behavior: visualization, profiling, qualitative cases, or failure attribution.
 
 ## Caption Frame
 

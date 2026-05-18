@@ -1,12 +1,13 @@
 # my-paper-writing
 
-A compact Codex skill for building, polishing, and stress-testing AI/ML/robotics paper stories from rough ideas, experiments, notes, or code repositories.
+A compact Codex skill for transferring a bottleneck-first AI/ML/robotics paper writing style to new projects from rough ideas, experiments, notes, or code repositories.
 
-The skill is designed for early paper construction and fast revision loops: it helps turn implementation details into a reviewer-facing narrative, draft section scaffolds, tighten language, and diagnose weak paragraph structure.
+The skill is designed for early paper construction and fast revision loops: it helps turn implementation details into a reviewer-facing narrative, draft section scaffolds in the target style, tighten language, and diagnose weak paragraph structure.
 
 ## Core Uses
 
 - Build an initial paper frame from scratch, notes, experiments, or a GitHub codebase.
+- Transfer the target writing style to new projects through reusable narrative moves.
 - Convert code artifacts into research abstractions: task, bottleneck, assumption, intervention, mechanism, evidence.
 - Draft Abstract, Introduction, Method, Experiments, captions, and contribution lists.
 - Polish language while preserving LaTeX commands, citations, equations, labels, and claims.
@@ -21,6 +22,10 @@ Use $my-paper-writing to build a paper outline from this repository.
 ```
 
 Useful prompts:
+
+```text
+Use $my-paper-writing to rewrite this Introduction in the target style: bottleneck-first, observation-driven, mechanism-centered, and evidence-tight.
+```
 
 ```text
 Use $my-paper-writing to turn this codebase into a paper story: core thesis, story spine, method modules, figure plan, and experiment matrix.
@@ -42,6 +47,22 @@ Use $my-paper-writing to polish this Method section while preserving LaTeX macro
 | `draft` | Writing a section from a validated story | section outline plus polished paragraphs |
 | `polish` | Tightening existing prose | revised text plus terse notes on wording changes |
 | `review` | Stress-testing narrative quality | issues first, then stronger rewrite options |
+
+## Style Transfer
+
+The core style is:
+
+```text
+real constraint -> structural mismatch -> diagnostic observation -> mechanism -> secondary bottleneck -> remedy -> claim-grounded evidence
+```
+
+This keeps new drafts close to the target style without copying old papers. The skill prioritizes:
+
+- practical constraints over broad motivation;
+- structural prior-work failures over citation lists;
+- figure-backed observations over unsupported novelty claims;
+- primary and secondary mechanisms over flat module lists;
+- paired evidence over single-axis claims.
 
 ## Code-To-Paper Workflow
 
@@ -70,11 +91,13 @@ code artifact -> research abstraction -> claim -> needed evidence -> paper secti
 `-- references/
     |-- code-to-paper.md
     |-- revision.md
+    |-- style-transfer.md
     `-- section-frames.md
 ```
 
 - `SKILL.md`: main trigger, workflow, writing rules, and output contract.
 - `references/code-to-paper.md`: high-level repository-to-paper abstraction framework.
+- `references/style-transfer.md`: writing-style signature, transfer sheet, paragraph moves, and style checklist.
 - `references/section-frames.md`: section-level scaffolds for Abstract, Introduction, Method, Experiments, and captions.
 - `references/revision.md`: paragraph repair, claim-evidence checks, and polishing rules.
 

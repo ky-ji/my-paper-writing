@@ -1,4 +1,4 @@
 interface:
   display_name: "My Paper Writing"
-  short_description: "Build, polish, and stress-test paper stories"
-  default_prompt: "Use $my-paper-writing to turn this codebase or rough idea into a paper outline, then polish the narrative."
+  short_description: "Transfer a bottleneck-first paper writing style"
+  default_prompt: "Use $my-paper-writing to build or revise this paper in the target style: bottleneck-first, observation-driven, mechanism-centered, and evidence-tight."
