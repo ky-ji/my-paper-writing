@@ -1,78 +1,33 @@
 ---
 name: my-paper-writing
-description: Use when building or revising an AI/ML/robotics paper in a bottleneck-first, observation-driven style; drafting from rough ideas or code repositories; polishing Abstract, Introduction, Method, Experiments, captions, and contribution lists; or reviewing paragraph flow, claim-evidence alignment, overclaims, and reviewer-facing narrative.
+description: Build, draft, revise, or review AI/ML/robotics papers and rebuttals from ideas, code, experiments, or existing prose, with clear logic, natural concise language, and accurate evidence.
 ---
 
 # My Paper Writing
 
 ## Purpose
 
-Use this skill as a compact style-transfer engine: turn code, experiments, notes, or rough prose into a clear top-conference paper story in the target writing style.
-The default style is bottleneck-first, observation-driven, mechanism-centered, and evidence-tight.
+Turn ideas, code, experiments, and rough prose into a coherent research argument. Resolve the logic before polishing the language. Explain the central insight, why it matters, how the method realizes it, and what the evidence establishes.
 
-## Fast Workflow
+Choose the narrative that fits the paper. Sentence counts, paragraph counts, module counts, and a primary/secondary mechanism pattern are not requirements.
 
-1. Choose the task mode:
-   - `build`: create a paper frame from code/notes.
-   - `draft`: write a section from a validated story.
-   - `polish`: tighten language while preserving claims.
-   - `review`: diagnose and strengthen paragraph or section narrative.
-2. Load only the needed reference:
-   - Style transfer: `references/style-transfer.md`
-   - From code to paper: `references/code-to-paper.md`
-   - Section playbooks: `references/section-frames.md`
-   - Revision and polishing: `references/revision.md`
-3. For substantial drafting or rewriting, apply the style transfer sheet before writing.
-4. Always identify the story spine:
-   `need -> bottleneck -> prior failure -> observation -> mechanism -> evidence`
-5. Return an artifact that saves time:
-   - for `build`: title candidates, core claim, outline, figure plan, experiment plan.
-   - for `draft`: section outline plus polished paragraphs.
-   - for `polish`: revised text plus key wording changes.
-   - for `review`: issues first, then stronger rewrite options.
+## Working Approach
 
-## Style-Transfer Rule
+Respect the requested edit scope and retain finalized names, terminology, and notation. Preserve LaTeX commands, citations, labels, equations, and macros while editing.
 
-Before polishing sentences, recover the paper's argumentative machine:
+Read only the references relevant to the task.
 
-- practical constraint first, not broad motivation.
-- prior work grouped by structural mismatch, not listed by citation.
-- one figure-backed observation that changes the design space.
-- one primary mechanism and one secondary mechanism that handles overhead, error, stability, or scalability.
-- experiments organized by claims: main trade-off, hard cases, module ablations, and internal behavior.
+- [Style transfer](references/style-transfer.md) for the overall argument and writing voice.
+- [Code to paper](references/code-to-paper.md) when deriving a paper from a repository or implementation notes.
+- [Section playbooks](references/section-frames.md) for abstracts, introductions, methods, experiments, and figures.
+- [Revision](references/revision.md) for repairing existing prose or writing a rebuttal.
 
-If a draft lacks one of these parts, mark the missing part as a story gap instead of smoothing the prose.
+For substantial writing, understand the research question, prior work, central insight, actual mechanism, and available evidence before drafting. A local wording edit need not repeat this process. Return the requested artifact and only the explanation useful for evaluating it.
 
-## Code-To-Paper Rule
+## Writing Preferences
 
-When a repository is provided, read it as a source of paper evidence:
-
-- README, scripts, and configs reveal the intended task, setting, and benchmark scope.
-- data, model, training, and inference pipelines reveal assumptions and intervention points.
-- objectives, controllers, memory/state, constraints, and decision rules reveal mechanisms.
-- logging, metrics, tests, and output artifacts reveal evidence that can support claims.
-
-Do not describe the code file-by-file. Convert implementation choices into research questions, observations, modules, ablations, and figures.
-
-## Writing Rules
-
-- One paragraph, one message.
-- First sentence states the paragraph role.
-- Every module answers a bottleneck.
-- Every strong claim has evidence or is weakened.
-- Pair each claimed gain with the right counterpart metric: quality, cost, robustness, stability, generality, or interpretability.
-- Prefer concrete mechanism verbs: identify, predict, allocate, select, reformulate, constrain, supervise, adapt, retrieve, reuse, decompose.
-- Preserve LaTeX commands, citations, labels, equations, and macros during edits.
-- Remove generic praise unless supported by a number or mechanism.
-
-## Default Output Contract
-
-For substantial tasks, return:
-
-1. `Story spine`: one compact causal chain.
-2. `Draft or rewrite`: the requested artifact.
-3. `Style transfer notes`: which style moves were applied or are missing.
-4. `Claim-evidence map`: major claims and support.
-5. `Reviewer risks`: missing evidence, weak transitions, unclear novelty, or overclaims.
-
-For quick language edits, return only the revised text plus 2-4 terse notes.
+- Be concise while preserving meaning, causal relations, contrasts, and necessary evidence.
+- Use concrete, natural, formal language. Explain mechanisms through actions and objects rather than abstract labels or implementation lists.
+- Give each paragraph a clear purpose and connect sentences through cause, contrast, or consequence.
+- Keep mechanisms, claims, citations, and reported results accurate. State necessary conditions without burying the contribution under defensive commentary.
+- Prefer sentences connected by clear words over semicolons or dashes. Use colons sparingly, mainly when emphasizing or defining a specific concept. These are preferences, not absolute bans, and do not apply to syntax required by code or LaTeX.

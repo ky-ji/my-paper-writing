@@ -1,4 +1,4 @@
 interface:
   display_name: "My Paper Writing"
-  short_description: "Transfer a bottleneck-first paper writing style"
-  default_prompt: "Use $my-paper-writing to build or revise this paper in the target style: bottleneck-first, observation-driven, mechanism-centered, and evidence-tight."
+  short_description: "Write clear, natural, evidence-backed research papers"
+  default_prompt: "Use $my-paper-writing to build or revise this paper with clear logic, natural concise language, and accurate evidence."

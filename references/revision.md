@@ -1,80 +1,33 @@
 # Revision
 
-## Story Check
+## Story And Scope
 
-Before rewriting, answer:
+Respect the requested scope and finalized names, terminology, notation, and content. For a substantial rewrite, check that the problem, prior-work comparison, insight, mechanism, and evidence form a coherent argument. Keep the introduction aligned with the current abstract, correcting substantive inconsistencies when needed.
 
-- What is the bottleneck?
-- What prior assumption fails?
-- What observation justifies the method?
-- Which module solves which bottleneck?
-- Which experiments support each claim?
-- What will a skeptical reviewer attack?
-
-If one answer is missing, mark it as a story gap before polishing.
+Resolve logic before polishing. Preserve a sound argument rather than forcing it into a different paragraph count or mechanism template.
 
 ## Paragraph Repair
 
-Use this order:
+Give the paragraph a clear purpose. Establish the objects it discusses and connect sentences through cause, contrast, consequence, example, or refinement. Make the transition to surrounding paragraphs natural.
 
-1. State the paragraph role in the first sentence.
-2. Define key nouns before reusing them.
-3. Ensure each sentence follows by cause, contrast, consequence, example, or refinement.
-4. Remove claims that do not map to evidence.
-5. End with the implication for the next paragraph.
+Remove repetition and unnecessary detail while retaining the original meaning, qualifications, evidence, and contrasts. If a shorter sentence changes the claim or erases a turn in the argument, revise the compression.
 
-For style transfer, also check whether the paragraph performs one recognizable move:
+## Evidence Accuracy
 
-- capability -> constraint;
-- prior grouping -> mismatch;
-- observation -> design;
-- naive extension -> failure;
-- mechanism -> advantage;
-- result -> attribution.
+Check that claims describe the actual method and that citations support the statements they accompany. Match results to their settings and sample sizes. Distinguish what an experiment establishes from an interpretation that still needs support.
 
-If the move is unclear, rewrite the topic sentence before polishing local wording.
-
-## Claim-Evidence Map
-
-Use:
-
-`Claim: ... | Evidence: ... | Status: supported / needs evidence / overclaimed`
-
-Evidence can be:
-
-- profiling or latency numbers;
-- observation figures;
-- main benchmark tables;
-- ablations;
-- compatibility tests;
-- qualitative visualizations;
-- theoretical analysis.
+State the strongest supported claim plainly. When support is insufficient, correct the claim or identify the specific missing evidence rather than adding a general defensive disclaimer. Do not invent results or imply that an unperformed experiment has verified the method.
 
 ## Language Tightening
 
-Prefer:
+Use concrete verbs and understandable terms. Remove vague praise, awkward abstraction, and component lists that obscure the insight. Keep formal prose natural.
 
-- `This raises two bottlenecks: ...`
-- `To address the first bottleneck, ...`
-- `To operationalize this insight, ...`
-- `We attribute this failure to ...`
-- `These results verify ...`
-- `Motivated by this observation, ...`
-- `The key to [method] lies in ...`
-- `Compared with [baseline], [method] ...`
+Use `yet`, `however`, or another clear transition when it preserves the intended contrast. Prefer ordinary sentences over semicolons or dashes and use colons sparingly for deliberate conceptual emphasis. Preserve required notation and syntax.
 
-Avoid:
+## Rebuttal
 
-- `very`, `powerful`, `significant`, `novel`, `effective` without evidence.
-- `we can see`, `it is worth noting`, `many works`.
-- long module lists before the problem is clear.
-- contribution bullets that only list components.
+Read the relevant paper, review, and rebuttal materials before drafting. Address each concern with a direct answer and the strongest relevant evidence, then explain how it resolves the question. Make the relationship between a proposed experiment and the concern clear before relying on its result.
 
-## Strengthening Moves
+Retain conditions or limitations necessary for an honest interpretation. Keep them specific and proportional, so defensive statements do not drown out positive evidence. Do not assert causality or generality beyond what the results establish.
 
-- Vague motivation -> add a real deployment constraint or number.
-- Flat method list -> insert bottleneck-to-module mapping.
-- Weak novelty -> add an observation or failure mode.
-- Weak experiment section -> group by claims instead of tables.
-- Weak caption -> state the takeaway first.
-- Overclaim -> weaken or request missing evidence.
+Be polite, sincere, and specific. Avoid repeatedly opening with `We agree` or using formulaic praise. When a reviewer acknowledges that a concern is resolved, use a short acknowledgement and a concrete revision commitment if appropriate.

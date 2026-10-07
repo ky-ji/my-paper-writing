@@ -2,11 +2,11 @@
 
 ## Goal
 
-Convert any AI/ML/robotics repository into a paper story. Do not summarize files. Climb from implementation artifacts to research claims.
+Convert any AI/ML/robotics repository into a paper story. Do not summarize files. Connect implementation artifacts to research claims.
 
 ## Abstraction Ladder
 
-Use this ladder before drafting:
+Use these mappings where relevant.
 
 | Repository evidence | Paper abstraction |
 | --- | --- |
@@ -20,7 +20,7 @@ Use this ladder before drafting:
 
 If the code only reveals an implementation detail, ask: what assumption makes this detail necessary, what bottleneck does it address, and what would fail without it?
 
-## Repository Reading Order
+## Repository Reading Guide
 
 1. `README`, project page, scripts: what problem the repository claims to solve.
 2. Entrypoints: what a user actually runs and which workflow is changed.
@@ -31,7 +31,7 @@ If the code only reveals an implementation detail, ask: what assumption makes th
 
 ## General Story Archetypes
 
-Choose the archetype that best explains the code. Mix archetypes only when each one maps to a separate claim.
+These examples can help interpret the repository. Use the reasoning that fits the project rather than assigning it a mandatory archetype.
 
 ### Efficiency Or Systems
 
@@ -83,30 +83,16 @@ Evidence: benchmark construction, metric validity, baseline coverage, diagnostic
 
 ## Build The Initial Paper Frame
 
-Produce this when asked to build from code:
+When asked to build from code, identify the core thesis, essential insight, actual mechanisms, and evidence needed to establish the claim. Propose an outline, figures, comparisons, and title candidates at the level of detail useful for the request.
 
-1. `Core thesis`: task + bottleneck + mechanism + evidence target.
-2. `Story spine`: need -> bottleneck -> prior assumption -> observation -> mechanism -> evidence.
-3. `Method decomposition`: 2-4 modules, each mapped to one bottleneck or observation.
-4. `Figure plan`: problem figure, method figure, observation/diagnostic figure, main result figure/table.
-5. `Experiment matrix`: claim -> metric -> benchmark -> baseline -> ablation.
-6. `Title candidates`: 3-5 names tied to the central mechanism or perspective.
-7. `Reviewer risks`: missing baselines, weak novelty, hidden overhead, unclear assumptions, unsupported claims.
+Connect the implementation to the research question before listing components. The number of modules, figures, titles, or narrative stages should follow the project. Use [Style Transfer](style-transfer.md) to develop the argument and [Section Playbooks](section-frames.md) to draft sections.
 
-After this frame is filled, transfer it into `references/style-transfer.md` before drafting prose. Code explains what exists; style transfer decides how the paper should argue.
+## Evidence And Mechanism Accuracy
 
-## Claim Discipline
+Check inputs, conditioning, representations, objectives, and operation order against the selected code and configuration. A smoother sentence must not change what the method actually does.
 
-Before writing, classify each claim:
+Treat code as evidence for implementation, not as proof of empirical gains or novelty. Support research claims with the relevant experiments or analysis, and attach citations to statements those sources actually support. Keep proposed evidence distinct from completed results.
 
-`Claim: ... | Code evidence: ... | Needed paper evidence: ... | Status: supported / needs experiment / overclaimed`
+Describe the insight and intervention rather than files, classes, head counts, or hidden-state lists. Promote an implementation choice to a contribution only when its research significance is explained and supported.
 
-Never promote an implementation convenience into a contribution unless it changes the research question, mechanism, or evidence.
-
-## Do Not Do
-
-- Do not turn README features directly into contribution bullets.
-- Do not organize the paper by files or classes.
-- Do not claim novelty from module names.
-- Do not write "we implement" when the paper needs "we formulate", "we observe", "we design", or "we evaluate".
-- Do not hide overhead, assumptions, or failure cases; make them part of the story or mark them as reviewer risks.
+Report overhead, assumptions, and failure cases when they affect interpretation. Keep the explanation specific to the claim rather than appending stock reviewer-risk commentary.

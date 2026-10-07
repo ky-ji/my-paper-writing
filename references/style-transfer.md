@@ -1,150 +1,39 @@
 # Style Transfer
 
-## Core Signature
+## Argument Before Wording
 
-The target style is not decorative. It is a reviewer-facing argument machine:
+Identify what the paper asks the reader to understand and why the answer matters. Connect the research need, the relevant limitation of prior work, the central insight, the mechanism, and the evidence. An observation, failure analysis, or secondary mechanism belongs in that argument when it actually explains the design.
 
-`real constraint -> structural mismatch -> diagnostic observation -> mechanism -> secondary bottleneck -> remedy -> claim-grounded evidence`
+Use this as a flexible way to reason, not a sequence of mandatory slots. Resolve substantive gaps rather than disguising them with polished language. A narrow edit can preserve the existing argument.
 
-Write as if each paragraph must reduce reviewer uncertainty. Avoid broad promises. Make the reader feel that the method is forced by the problem structure.
+## Writing Voice
 
-## Style Transfer Sheet
+Prefer specific actions and relationships over abstract labels, inflated adjectives, and difficult new terminology. A method name should make its insight easier to understand. Preserve established terminology and notation across sections.
 
-Fill this before drafting from a new project:
-
-| Slot | Question | Output |
-| --- | --- | --- |
-| Field value | What capability or deployment need makes the topic matter? | one concrete sentence |
-| Practical bottleneck | What blocks use: latency, bias, error, memory, supervision, instability, mismatch? | one measurable constraint if possible |
-| Prior mismatch | What common assumption makes prior work insufficient? | grouped by paradigm, not by paper |
-| Diagnostic observation | What fact changes the design space? | figure/table/profiling/analysis target |
-| Primary mechanism | What design directly exploits the observation? | named module or paradigm |
-| Secondary bottleneck | What breaks when the primary idea is applied naively? | overhead, error propagation, static schedule, weak signal, scalability |
-| Remedy | What second design makes the primary mechanism practical? | scheduler, criterion, loss, pipeline, buffer, solver, training signal |
-| Evidence | Which experiments support each claim? | main result, hard case, ablation, qualitative/profiling |
-
-Do not draft the Introduction until every slot has a concrete answer or an explicit `missing evidence` marker.
+Shorten repetition and implementation detail while retaining the original claim, its conditions, and its causal or contrastive meaning. A transition such as `yet` or `however` can keep a compressed sentence natural. Do not insert connective phrases mechanically.
 
 ## Abstract Style
 
-Use 5-7 sentences with this pressure curve:
+State why the capability matters and the obstacle addressed by this paper. Explain the common assumption or practice in the closest work, then introduce the essential insight and the mechanism needed to realize it. Keep the method understandable without turning the abstract into a list of heads, hidden states, or other components.
 
-1. Capability plus practical blocker.
-2. Existing paradigm and why it structurally fails in this setting.
-3. Proposed method as a named mechanism, not a vague framework.
-4. Key observation or diagnosis.
-5. Primary design that operationalizes the observation.
-6. Secondary design that resolves a hidden failure mode or overhead.
-7. Evidence with paired metrics: quality plus cost, robustness, stability, or generality.
+Include advantages only when the preceding story makes them relevant. Do not append annotation-free or external-teacher-free claims merely because they are true.
 
-Preferred sentence moves:
+Introduce evaluation scope naturally with `Across ...`. Integrate benchmark names into the sentence rather than inserting them in parentheses. Select the key numbers that substantiate the contribution and close by connecting the result back to it.
 
-- `[Field] has demonstrated [capability], but [bottleneck] makes it impractical for [deployment].`
-- `Existing [paradigm] relies on [assumption], which fails under [setting].`
-- `To operationalize this insight, we design [module] to [mechanism].`
-- `However, directly applying [idea] introduces [failure]. To mitigate this, we [remedy].`
+Adjust length and order to the venue and argument. Neither a fixed sentence count nor a second mechanism is required.
 
 ## Introduction Style
 
-Use a 6-paragraph arc:
+Develop the abstract's argument with enough context for the reader to understand the problem and insight. Give each paragraph a clear job. Establish the necessary motivation before introducing the method, and keep the method overview proportional to that job.
 
-1. `Need`: area value, adoption, and real-world constraint with a number or concrete example.
-2. `Gap`: prior methods grouped into 1-2 paradigms, ending with the shared structural mismatch.
-3. `Observation`: diagnostic figure/table/profiling result, phrased as 1-2 explicit observations.
-4. `Method`: proposed paradigm and what workflow it changes.
-5. `Mechanisms`: primary mechanism, then secondary bottleneck and remedy.
-6. `Evidence`: benchmark scope, headline paired metrics, contribution bullets.
+Read the closest work before summarizing it. Emphasize the shared practice, assumption, and limitation relevant to this paper. Group work into paradigms only when the grouping explains something.
 
-The Introduction should contain at least one early figure or diagnostic reference before the method details. The figure should justify the method, not merely illustrate it.
+Use an observation or figure when it helps establish the insight. Do not manufacture a diagnostic or secondary failure to complete a template. Contributions should express research claims rather than enumerate components.
 
-## Method Style
+## Method And Results
 
-Open with a roadmap that names the modules and their roles:
+Explain what each necessary design changes and why. Formalize after establishing the meaning of the quantities. Describe an obvious alternative or its failure when that comparison clarifies the method.
 
-`In this section, we introduce [method], a [role] designed to [goal]. It consists of [A] and [B]. We first formulate [minimal unit], then describe [A], and finally integrate [B] into the full pipeline.`
+Organize experiments around questions and claims. State the result, the strongest relevant comparison, and what the evidence supports. Attribute a gain to a mechanism only when the analysis or ablations support that explanation.
 
-Then follow this rhythm:
-
-- define the minimal unit or process before proposing changes;
-- turn the method into 2-3 named modules;
-- start each module with a motivation or question;
-- present a naive/direct solution and its failure when useful;
-- introduce the mechanism;
-- formalize only after the reader knows why the equation exists;
-- end by stating the practical advantage or link to an ablation.
-
-Good module logic:
-
-`Motivated by [observation], we seek [goal]. A naive idea is [baseline], but [failure]. To overcome this limitation, we [mechanism].`
-
-## Experiment Style
-
-Organize experiments by claims, not by tables:
-
-1. setup: benchmarks, baselines, metrics, implementation;
-2. main trade-off: performance plus efficiency/cost;
-3. hard cases: extreme noise, difficult tasks, real-world or long-horizon settings;
-4. generality: additional models, samplers, datasets, or domains;
-5. mechanism ablations: one ablation per design module;
-6. internal behavior: visualization, profiling, qualitative cases, failure modes.
-
-Result paragraphs should state the takeaway first, then the numbers, then the reason:
-
-`[Method] achieves [headline result] under [setting]. Compared with [baseline], it [specific improvement]. We attribute this gain to [mechanism], which [causal explanation].`
-
-## Contribution Style
-
-Use 3-4 bullets. Each bullet should be claim-like, not feature-like:
-
-- observation or paradigm;
-- primary mechanism;
-- secondary mechanism, theory, pipeline, or objective;
-- experiments with headline paired metrics.
-
-Avoid bullets that merely list modules. A contribution should say what uncertainty it resolves for the reader.
-
-## Paragraph Moves
-
-Use these moves to transfer the style:
-
-- `Capability -> constraint`: establish why the field matters and why the current system fails in practice.
-- `Prior grouping -> mismatch`: compress related work into paradigms, then expose the shared assumption.
-- `Observation -> design`: make one empirical/theoretical fact motivate the method.
-- `Naive extension -> failure`: show why the obvious version is insufficient.
-- `Mechanism -> advantage`: explain what the design changes and why it helps.
-- `Result -> attribution`: report numbers and immediately connect them back to the mechanism.
-
-## Language Profile
-
-Prefer concrete verbs:
-
-`identify`, `reformulate`, `allocate`, `condition`, `truncate`, `mitigate`, `reuse`, `decompose`, `decouple`, `overlap`, `supervise`, `adapt`, `preserve`, `recover`.
-
-Prefer connective phrases:
-
-- `Despite this necessity, ...`
-- `To examine this limitation, ...`
-- `Motivated by this observation, ...`
-- `The key to [method] lies in ...`
-- `This raises two bottlenecks: ...`
-- `To address the first bottleneck, ...`
-- `To overcome the second bottleneck, ...`
-- `We attribute this failure/gain to ...`
-
-Use adjectives only when anchored:
-
-- good: `training-free`, `sample-wise`, `block-specific`, `rollout-adaptive`, `parameter-efficient`, `inference-efficient`, `lossless`.
-- weak unless supported: `novel`, `powerful`, `significant`, `effective`, `robust`.
-
-## Style Review Checklist
-
-Before returning a rewrite, check:
-
-- Does the first paragraph include a concrete deployment or learning constraint?
-- Is prior work grouped by shared failure rather than listed?
-- Is there a figure-backed observation or planned diagnostic?
-- Does each method module answer one bottleneck?
-- Is there a secondary bottleneck after the primary idea?
-- Are experiments mapped to claims rather than presented as table narration?
-- Are strong adjectives supported by mechanisms or numbers?
-- Are LaTeX commands, citations, labels, equations, and macros preserved?
+For detailed section guidance, use [Section Playbooks](section-frames.md). For preserving meaning during edits or responding to reviewers, use [Revision](revision.md).

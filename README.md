@@ -2,7 +2,7 @@
 
 A compact agent skill for transferring my writing style to new projects from rough ideas, experiments, notes, or code repositories.
 
-The skill is designed for early paper construction and fast revision loops: it helps turn implementation details into a reviewer-facing narrative, draft section scaffolds in the target style, tighten language, and diagnose weak paragraph structure.
+The skill is designed for early paper construction and revision loops. It helps turn implementation details into a coherent research argument, draft section scaffolds in the target style, tighten language, and diagnose weak paragraph structure.
 
 ## Core Uses
 
@@ -11,7 +11,7 @@ The skill is designed for early paper construction and fast revision loops: it h
 - Convert code artifacts into research abstractions: task, bottleneck, assumption, intervention, mechanism, evidence.
 - Draft Abstract, Introduction, Method, Experiments, captions, and contribution lists.
 - Polish language while preserving LaTeX commands, citations, equations, labels, and claims.
-- Review paragraphs or sections for story flow, claim-evidence alignment, overclaims, and reviewer risks.
+- Review paragraphs or sections for story flow, claim-evidence alignment, overclaims, and evidence accuracy.
 
 ## Quick Start
 
@@ -24,7 +24,7 @@ Use $my-paper-writing to build a paper outline from this repository.
 Useful prompts:
 
 ```text
-Use $my-paper-writing to rewrite this Introduction in the target style: bottleneck-first, observation-driven, mechanism-centered, and evidence-tight.
+Use $my-paper-writing to rewrite this Introduction in the target style: clear in logic, natural and concise in language, and accurate in evidence.
 ```
 
 ```text
@@ -43,26 +43,16 @@ Use $my-paper-writing to polish this Method section while preserving LaTeX macro
 
 | Mode | Use it for | Expected output |
 | --- | --- | --- |
-| `build` | Starting from code, notes, or rough ideas | story spine, title candidates, outline, figure plan, experiment matrix |
-| `draft` | Writing a section from a validated story | section outline plus polished paragraphs |
-| `polish` | Tightening existing prose | revised text plus terse notes on wording changes |
-| `review` | Stress-testing narrative quality | issues first, then stronger rewrite options |
+| `build` | Starting from code, notes, or rough ideas | a paper frame with titles, outline, figures, and experiments as needed |
+| `draft` | Writing a section from a validated story | requested section, with an outline when useful |
+| `polish` | Tightening existing prose | revised text, with useful notes on substantive changes |
+| `review` | Checking narrative quality | important issues and suitable rewrite options |
 
 ## Style Transfer
 
-The core style is:
+The skill prioritizes logic before wording, a clear central insight, faithful mechanism descriptions, and claims supported by the actual evidence. It preserves meaning and contrasts while shortening prose.
 
-```text
-real constraint -> structural mismatch -> diagnostic observation -> mechanism -> secondary bottleneck -> remedy -> claim-grounded evidence
-```
-
-This keeps new drafts close to the target style without copying old papers. The skill prioritizes:
-
-- practical constraints over broad motivation;
-- structural prior-work failures over citation lists;
-- figure-backed observations over unsupported novelty claims;
-- primary and secondary mechanisms over flat module lists;
-- paired evidence over single-axis claims.
+Narrative shape follows the paper. There is no required sentence count, paragraph count, module count, or primary/secondary mechanism pattern. Section guidance also covers natural abstract scope, problem-driven experiments, figure roles, and direct, sincere rebuttal responses.
 
 ## Code-To-Paper Workflow
 
@@ -95,11 +85,11 @@ code artifact -> research abstraction -> claim -> needed evidence -> paper secti
     `-- section-frames.md
 ```
 
-- `SKILL.md`: main trigger, workflow, writing rules, and output contract.
+- `SKILL.md`: main trigger, working approach, writing preferences, and reference links.
 - `references/code-to-paper.md`: high-level repository-to-paper abstraction framework.
-- `references/style-transfer.md`: writing-style signature, transfer sheet, paragraph moves, and style checklist.
+- `references/style-transfer.md`: overall argument, writing voice, and flexible narrative guidance.
 - `references/section-frames.md`: section-level playbooks for Abstract, Introduction, Related Work, Method, Experiments, figures, and conclusions.
-- `references/revision.md`: paragraph repair, claim-evidence checks, and polishing rules.
+- `references/revision.md`: meaning-preserving revision, evidence accuracy, and rebuttal guidance.
 
 ## Install Or Update
 
@@ -118,8 +108,8 @@ git pull
 
 ## Design Principles
 
-- Start with the bottleneck, not the implementation.
-- Use observations to justify mechanisms.
-- Map every module to a claim.
-- Pair each claimed gain with evidence: quality, cost, robustness, stability, generality, or interpretability.
-- Keep reviewer risks visible instead of polishing them away.
+- Resolve the argument before polishing sentences.
+- Explain the core insight through concrete mechanisms.
+- Preserve the requested edit scope and finalized terminology and notation.
+- Match claims, citations, mechanisms, and results to their evidence.
+- Keep narrative structure flexible and necessary qualifications proportional.
